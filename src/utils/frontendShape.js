@@ -22,6 +22,13 @@ export function formatEuroPrice(value) {
   return str.startsWith("€") ? str : `€${str}`;
 }
 
+/** Inverse of formatEuroPrice — "€3,15" or "€3.15" -> 3.15 */
+export function parseEuroPrice(value) {
+  if (!value) return 0;
+  const num = parseFloat(String(value).replace(/[^0-9.,]/g, "").replace(",", "."));
+  return Number.isFinite(num) ? num : 0;
+}
+
 /** Matches AdminOfferManagement combo offerPrice logic */
 export function calcComboOfferPrice(products = []) {
   const totalDiscount = products.reduce((sum, p) => {

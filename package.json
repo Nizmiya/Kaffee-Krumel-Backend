@@ -9,16 +9,27 @@
     "dev": "nodemon server.js",
     "seed": "node src/seeders/seed.js"
   },
-  "keywords": ["kaffee-krumel", "cafe", "admin-api"],
+  "keywords": [
+    "kaffee-krumel",
+    "cafe",
+    "admin-api"
+  ],
   "license": "ISC",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1060.0",
+    "apple-signin-auth": "^2.1.0",
+    "axios": "^1.13.2",
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^4.21.2",
+    "google-auth-library": "^10.9.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.13.2",
-    "multer": "^1.4.5-lts.2"
+    "multer": "^1.4.5-lts.2",
+    "nanoid": "^5.1.11",
+    "sharp": "^0.35.3",
+    "stripe": "^22.3.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
