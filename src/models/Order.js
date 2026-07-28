@@ -39,6 +39,15 @@ const orderSchema = new mongoose.Schema(
     orderTime: { type: String, default: "" },
     orderDate: { type: String, default: "" },
     items: { type: [orderItemSchema], default: [] },
+    // --- Consumer app additions (additive only — admin dashboard ignores these) ---
+    customerId: { type: mongoose.Schema.Types.ObjectId, ref: "CustomerAccount", index: true, default: null },
+    branchId: { type: Number, index: true, default: null },
+    paymentIntentId: { type: String, default: null, index: true },
+    paymentStatus: {
+      type: String,
+      enum: ["pending", "paid", "failed", "refunded"],
+      default: "pending",
+    },
   },
   { timestamps: true }
 );
